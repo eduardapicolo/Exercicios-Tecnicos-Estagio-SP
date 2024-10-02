@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+//tecnica 1
+int main ()
+{
+    int indice = 13 , soma = 0 , k = 0;
+    while (k < indice)
+    {
+        k = k +1;
+        soma = soma + k;
+    }
+    cout << soma << endl;
+    return 0;
+    //o valor da variavel soma vale 91
+}
