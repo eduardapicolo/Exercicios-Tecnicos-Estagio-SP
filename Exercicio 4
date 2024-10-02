@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+//tecnica 4 
+
+struct estados
+{
+    char nome[8];
+    double faturamento, representacao;
+};
+void printRepresentacao (struct estados & estado)
+{
+    cout << "O Valor da representação do estado de " << estado.nome << " Vale: " << estado.representacao << "%" << endl << string(40, '-') << endl;
+}
+int main ()
+{
+    estados estado [5]{
+        {"SP", 67836.43, 0.0},
+        {"RJ", 36678.66, 0.0},
+        {"MG", 29229.88, 0.0},
+        {"ES", 27165.48, 0.0},
+        {"Outros", 19849.53, 0.0}
+    };
+    
+    double total = 0.0;
+    for (int i = 0 ; i < 5 ; i++)
+    {
+        total += estado[i].faturamento;
+    }
+    
+    for (int i = 0 ; i < 5 ; i++)
+    {
+        estado[i].representacao = (estado[i].faturamento / total)*100;
+    }
+    
+    for (int i = 0 ; i < 5 ; i ++)
+    {
+        printRepresentacao (estado[i]);
+    }
+    return 0;
+}
