@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+//tecnica 5
+
+void inverte (char string[50] , char sinversa[50])
+{
+    int tamanho = strlen (string);
+    for (int i = 0; i < tamanho; ++i) 
+    {
+        sinversa[i] = string[tamanho - 1 - i];
+    }
+    sinversa[tamanho] = '\0';
+}
+int main () {
+    
+    char s[50];
+    cout << "Digite a string: ";
+    cin.getline (s , 50);
+    char si[50];
+    inverte (s , si);
+    cout << s << endl << si << endl;
+    return 0;
+}
